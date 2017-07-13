@@ -32,22 +32,22 @@ class Flower
   
 end
 
-my_flower = Flower.new("red","Rose" )
-my_flower.price = 11
-puts my_flower.price
+@my_flower = Flower.new("red","Rose" )
+@my_flower.price = 11
+puts @my_flower.price
 
-you_flower = Flower.new("blue","Tulip" )
-you_flower.price = 25
-puts you_flower.price
+@you_flower = Flower.new("blue","Tulip" )
+@you_flower.price = 25
+puts @you_flower.price
 
-puts you_flower.name
-#puts you_flower.color
+puts @you_flower.name
+#puts @you_flower.color
 
-puts my_flower
+puts @my_flower
 
 class Flower
   def to_sentence
-    puts "#{@name} are #{color}"
+    puts "#{@name} are #{@color}"
   end
 end
 
@@ -56,10 +56,14 @@ class Flower
 
     if price < another.price
       "Hey I am cheaper!"
-    elseif price > another.price
+    else
+      if price > another.price
       "Yup, I am more expensive."
     else 
       "Where are cheap."
+    end
+    end
+
   end
 end
 
