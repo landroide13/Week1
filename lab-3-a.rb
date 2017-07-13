@@ -46,16 +46,20 @@ puts you_flower.name
 puts my_flower
 
 class Flower
-  def to_sentence(msg)
-    puts "#{msg}"
+  def to_sentence
+    puts "#{@name} are #{color}"
   end
 end
 
 class Flower
-  def to_compare( , )
+  def to_compare(another)
 
-
-
+    if price < another.price
+      "Hey I am cheaper!"
+    elseif price > another.price
+      "Yup, I am more expensive."
+    else 
+      "Where are cheap."
   end
 end
 
