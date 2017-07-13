@@ -51,6 +51,18 @@ class Flower
   end
 end
 
+class Flower
+  def to_compare( , )
+
+
+
+  end
+end
+
+
+
+
+
 
 
 
