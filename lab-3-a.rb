@@ -53,11 +53,9 @@ end
 
 class Flower
   def to_compare(another)
-
     if price < another.price
       "Hey I am cheaper!"
-    else
-      if price > another.price
+    elsif price > another.price
       "Yup, I am more expensive."
     else 
       "Where are cheap."
@@ -65,26 +63,33 @@ class Flower
   end
 
   end
-end
 
 
 class Bouquet
+
   def initialize(flowers = [])
     # your code here
+    @flowers = flowers
+    
   end
   
   def add(flower)
+
+    @flowers << flower
+
     # your code here
     # HINT: this updates your instance variable
-    
     # puts "Great. Added #{flower.name} to the bouquet."
   end
   
   def flowers
-    # your code here
-    # HINT: this is a reader; return the instance variable
+    @flower
   end
+
 end
+
+
+Bouquet.new([@my_flower, @you_flower])
 
 
 
