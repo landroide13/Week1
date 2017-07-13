@@ -26,10 +26,22 @@ years_old_bob = seconds_old_bob / seconds_year
 puts "Bob years Old #{years_old_bob}"
 
 
+########################## a2 #########################################
 
 
+print "Hello World.."
+
+puts "Hello World.."
 
 
+my_name="Luis"
 
+puts "Hello #{my_name}"
+
+puts "Ruby is Red "
+puts "Ruby is blue.."
+puts " I'm confuse.."
+
+puts my_name * 5
 
 
