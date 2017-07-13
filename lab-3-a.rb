@@ -34,16 +34,18 @@ end
 
 @my_flower = Flower.new("red","Rose" )
 @my_flower.price = 11
-puts @my_flower.price
+puts @my_flower.name
 
 @you_flower = Flower.new("blue","Tulip" )
 @you_flower.price = 25
-puts @you_flower.price
+puts @you_flower.name
 
 puts @you_flower.name
 #puts @you_flower.color
 
-puts @my_flower
+@other_flower=Flower.new("green","weed")
+@other_flower.price = 35
+puts @other_flower.name
 
 class Flower
   def to_sentence
@@ -68,32 +70,25 @@ class Flower
 class Bouquet
 
   def initialize(flowers = [])
-    # your code here
     @flowers = flowers
-    
   end
   
   def add(flower)
-
     @flowers << flower
-
-    # your code here
-    # HINT: this updates your instance variable
-    # puts "Great. Added #{flower.name} to the bouquet."
+    puts "Nice #{flower.name}"
   end
   
   def flowers
-    @flower
+    @flowers
   end
 
 end
 
+bouq1 = Bouquet.new([@my_flower, @you_flower])
 
-Bouquet.new([@my_flower, @you_flower])
+bouq1.add(@other_flower)
 
-
-
-
+puts "My Bouquet is #{bouq1.flowers}" 
 
 
 
