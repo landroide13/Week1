@@ -62,10 +62,31 @@ class Flower
     else 
       "Where are cheap."
     end
-    end
+  end
 
   end
 end
+
+
+class Bouquet
+  def initialize(flowers = [])
+    # your code here
+  end
+  
+  def add(flower)
+    # your code here
+    # HINT: this updates your instance variable
+    
+    # puts "Great. Added #{flower.name} to the bouquet."
+  end
+  
+  def flowers
+    # your code here
+    # HINT: this is a reader; return the instance variable
+  end
+end
+
+
 
 
 
