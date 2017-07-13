@@ -1,29 +1,8 @@
 
 class Flower
   
-  def name(name)
-    @name = name     
-  end 
-  
-  def color(color)
-    @color = color     
-  end 
-  
-  def name
-    @name   
-  end
-  
-  def color(color)
-    @color    
-  end 
-  
-  def price=(price)
-    @price = price
-  end
-  
-  def price
-    @price
-  end
+  attr_accessor :name , :color
+  attr_writer :price
   
   def initialize(color , name)
     @color = color 
@@ -41,7 +20,7 @@ puts @my_flower.name
 puts @you_flower.name
 
 puts @you_flower.name
-#puts @you_flower.color
+puts @you_flower.color
 
 @other_flower=Flower.new("green","weed")
 @other_flower.price = 35
@@ -68,6 +47,8 @@ class Flower
 
 
 class Bouquet
+
+  attr_accessor :flowers 
 
   def initialize(flowers = [])
     @flowers = flowers
