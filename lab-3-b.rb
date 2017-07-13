@@ -69,7 +69,17 @@ bouq1 = Bouquet.new([@my_flower, @you_flower])
 
 bouq1.add(@other_flower)
 
-puts "My Bouquet is #{bouq1.flowers}" 
+puts "My Bouquet is #{bouq1.flowers.to_a}" 
+
+########################### t4 ##########################################
+
+def total_price
+  
+
+end
+
+
+
 
 
 ############################ B2 ##########################################
