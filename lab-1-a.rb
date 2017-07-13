@@ -44,4 +44,29 @@ puts " I'm confuse.."
 
 puts my_name * 5
 
+name="Luis"
+
+puts name * 50
+
+first_name = "Luis"
+Last_name = "Andrade"
+
+full_name = first_name + Last_name
+
+puts "The full name is #{full_name}"
+
+puts "Whats Your Name ??"
+answer_name = gets.chomp
+
+puts "Welcome #{answer_name}"
+
+puts "Whats your first name ?"
+name1=gets.chomp
+puts "Whats you last name ?"
+name2=gets.chomp
+
+puts "Your Full name is #{name1} #{name2} "
+
+
+
 
