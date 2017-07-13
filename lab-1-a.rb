@@ -67,6 +67,17 @@ name2=gets.chomp
 
 puts "Your Full name is #{name1} #{name2} "
 
+#################### Bonus ##########################
+
+
+puts first_name.capitalize
+puts last_name.capitalize
+
+puts 
+
+
+
+
 
 
 
