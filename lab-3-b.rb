@@ -74,7 +74,10 @@ puts "My Bouquet is #{bouq1.flowers.to_a}"
 ########################### t4 ##########################################
 
 def total_price
+
   
+
+
 
 end
 
