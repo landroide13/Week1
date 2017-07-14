@@ -81,12 +81,18 @@ class Todo
       lis_index = gets.chomp
       if lis_index == "exit"
         puts "Good Bye.."
+        "exit"
       else
+        @list.complete_at!(lis_index.to_1 - 1)
+        display
+        end
+      end
+    end
 
-
-
-
-
+   @todo=Todo.new
+   @todo.display 
+loop do     
+  break if @todo.prompt == "exit"
 end
 
 
