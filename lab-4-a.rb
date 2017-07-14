@@ -1,6 +1,5 @@
 
 class Item
-
   attr_accessor :name
 
   def initialize(name, done = false)
@@ -23,14 +22,10 @@ class Item
   def self.new_from_line(line)
 
   end
-
-
-
 end
 
 
 class List
-
   attr_accessor :items , :name
 
   def initialize(name , item = [])
@@ -65,8 +60,21 @@ end
 
 
 
-class todo
-  
+class Todo
+  attr_accessor :line , :list
+
+    def initialize
+      @list = List.new("Today")
+      @line=File.read("todo.md").split("\n")
+      @line.each do |line|
+        @list.add(Item.new(line[6..-1],line[3] = "x"))
+      end
+    end 
+
+    def display
+      puts "Today :"
+      @list.display
+    end  
 
 
 
