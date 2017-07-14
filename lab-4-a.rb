@@ -1,12 +1,10 @@
+
 class Item
-
-  attr_accessor :name 
-
-  def initialize(name , done=false)
+  def initialize(name, done = false)
     @name = name
     @done = done
   end
-
+  
   def done?
     @done
   end
@@ -20,6 +18,20 @@ class Item
   
   def self.new_from_line(line)
   end
-
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
