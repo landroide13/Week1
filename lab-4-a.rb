@@ -18,9 +18,9 @@ class Item
   def display
     @name
   end
-  
+  # input: - [x] Love Ruby
   def self.new_from_line(line)
-
+    line[6..-1]
   end
 end
 
@@ -75,6 +75,15 @@ class Todo
       puts "Today :"
       @list.display
     end  
+
+    def prompt
+      puts "Enter the number of item done.."
+      lis_index = gets.chomp
+      if lis_index == "exit"
+        puts "Good Bye.."
+      else
+
+
 
 
 
