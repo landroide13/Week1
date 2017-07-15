@@ -4,23 +4,26 @@ require_relative 'item'
 class List
   attr_accessor  :name , :items
 
-  def initialize(name , item = [])
+  def initialize(name , items = [])
     @name = name
-    @items = item
+    @items = items
   end
 
   def add(new_item)
-    @items.push(new_item)
+    @items << new_item
   end
+
+  def complete_at!(index)
+    @items[index].done = true
+    end
 
   def display
     puts "Display the list : #{name}"
     @items.each_with_index do |item , index|
-     if item.done?
-      puts "-[x] #{item.name} (#{index + 1})"
-     else
-      puts "-[ ] #{item.name} (#{index + 1})" 
-     end 
+      if item.done?
+        puts "-[x] #{item.name} (#{index + 1})"
+      else
+        puts "-[ ] #{item.name} (#{index + 1})"
    end
   end
 

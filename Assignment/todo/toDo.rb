@@ -31,12 +31,6 @@ class Todo
 end
 
 
-   @todo=Todo.new
-   @todo.display 
-
-loop do     
-  break if @todo.show == "exit"
-end
 
 
 
