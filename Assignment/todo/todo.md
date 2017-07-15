@@ -5,3 +5,4 @@
 - [x] Learn Class
 - [ ] Learn Rails
 - [ ] Publish my first website
+- [ ] Morning Running
