@@ -30,6 +30,7 @@ class Todo
     end
 end
 
+
    @todo=Todo.new
    @todo.display 
 
