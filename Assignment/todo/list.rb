@@ -24,8 +24,9 @@ class List
         puts "-[x] #{item.name} (#{index + 1})"
       else
         puts "-[ ] #{item.name} (#{index + 1})"
-   end
-  end
+      end
+    end
+ end 
 
  def display_done
     puts "Display Done ones :"
