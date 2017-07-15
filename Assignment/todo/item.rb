@@ -18,6 +18,7 @@ class Item
   def display
     @name
   end
+  
   # input: - [x] Love Ruby
   def self.new_from_line(line)
     line[6..-1]

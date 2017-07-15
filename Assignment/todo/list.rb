@@ -2,15 +2,15 @@
 require_relative 'item'
 
 class List
-  attr_accessor :items , :name
+  attr_accessor  :name , :items
 
   def initialize(name , item = [])
-    @items = item
     @name = name
+    @items = item
   end
 
-  def add(item)
-    @items << item
+  def add(new_item)
+    @items.push(new_item)
   end
 
   def display
@@ -19,7 +19,7 @@ class List
      if item.done?
       puts "-[x] #{item.name} (#{index + 1})"
      else
-      puts "-[] #{item.name} (#{index + 1})" 
+      puts "-[ ] #{item.name} (#{index + 1})" 
      end 
    end
   end
