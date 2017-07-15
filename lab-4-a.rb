@@ -59,7 +59,6 @@ class List
 end
 
 
-
 class Todo
   attr_accessor :line , :list
 
@@ -91,6 +90,7 @@ class Todo
 
    @todo=Todo.new
    @todo.display 
+
 loop do     
   break if @todo.show == "exit"
 end
