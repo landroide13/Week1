@@ -1,4 +1,6 @@
 
+require_relative 'item'
+
 class List
   attr_accessor :items , :name
 
