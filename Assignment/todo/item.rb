@@ -16,7 +16,7 @@ class Item
   end
   
   def display
-    @name
+    puts "#{@name} #{@done}"
   end
   
   # input: - [x] Love Ruby
