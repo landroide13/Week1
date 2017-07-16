@@ -58,18 +58,24 @@ class Todo
       answer=gets.chomp
 
       if answer == "a"
-        Todo.show_all
+        @todo = Todo.new
+        @todo.load
+        @todo.show_all
       elsif answer == "b"
         @todo = Todo.new
+        @todo.load
         @todo.show_done
       elsif answer == "c"
         @todo = Todo.new
+        @todo.load
         @todo.show_undone
       elsif answer == "d"
         puts "Enter the new item "
         new_it=gets.chomp
         @todo = Todo.new
         @todo.add(new_it)
+        @todo.load
+        @todo.show_all
       elsif answer == "e"
         ##########     
       elsif answer == "f"
