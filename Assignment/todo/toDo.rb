@@ -20,7 +20,7 @@ class Todo
     def load_data
        @line = File.read("todo.md").split("\n")
        @new_item = Item.new_from_line(@line)
-       list.add(@new_item)
+       @list.add(@new_item)
     end
 
     def todo_add()
@@ -28,25 +28,16 @@ class Todo
     end
 
     def display
-      puts "Today :"
+      puts "#{@list.name} :"
       @list.display
     end  
 
     def show_done
-      puts "The done Items are : "
-      lis_index = gets.chomp
-      if lis_index == "exit"
-        puts "Good Bye.."
-        "exit"
-      else
-        @list.complete_at!(lis_index.to_i - 1)
-        display
-      end
+      @list.display_done
     end
 
     def show_undone 
-    
-    
+      @list.display_undone
     end
 
 
