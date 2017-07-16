@@ -37,7 +37,7 @@ class Todo
       @my_list.display_undone
     end
 
-    def save
+    def save_jo
       my_file = {item:@item ,list:@list}.to_json
       open('my_file.json','a') do |file|
         file.puts my_file
@@ -52,7 +52,7 @@ class Todo
       puts "For show all the Done items type b) "
       puts "For show all the UnDone type c) "
       puts "For add a new item type d) "
-      puts "For delete a item type e) "
+      puts "For past to Json file type e) "
       puts "For exit type f) "
 
       answer=gets.chomp
@@ -76,8 +76,15 @@ class Todo
         @todo.add(new_it)
         @todo.load
         @todo.show_all
+        puts "You wanna pass it to json file (y / n) ?"
+        answer = gets.chomp
+        if answer == "y"
+          @todo.save_jo
+          else
+          @todo.prompt
       elsif answer == "e"
-        ##########     
+        @todo = Todo.new
+        @todo.save_jo     
       elsif answer == "f"
         puts "Good bye"
       end
