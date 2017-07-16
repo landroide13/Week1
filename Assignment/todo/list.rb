@@ -36,4 +36,14 @@ class List
         end
       end
    end
+    
+ def display_undone   
+    puts "The unDone ones :" 
+    @items.each do |item|
+      if item.done?
+        puts "[ ] #{item.name}"
+        end
+      end
+   end
+
 end
