@@ -1,4 +1,4 @@
-
+require 'json'
 require_relative 'list'
 require_relative 'item'
 
@@ -7,41 +7,40 @@ class Todo
 
     def initialize(file_name = "todo.md")
       @file_name = file_name
-      @list = List.new("Today")
-      #@line.each do |line|
-        #@list.add(Item.new(line[6..-1],line[3] = "x"))
-      #end
+      @my_list = List.new("Today")
     end
     
     def list
-      @list 
+      @my_list 
     end 
 
-    def load_data
+    def load
        @line = File.read("todo.md").split("\n")
-       @item = Item.new_from_line(@line)
-       list.add(@item)
-    end
+       @line.each do |line|
+          @my_list.add(Item.new(line[6..-1],line[3]))
+        end
+        puts @my_list
+     end
 
-    def todo_add(new_item)
-      @list.add(Item.new(new_item))
+    def add(new_item)
+      @my_list.add(Item.new(new_item))
     end
 
     def show_all
-      @list.display
+      @my_list.display
     end  
 
     def show_done
-      @list.display_done
+      my_list.display_done
     end
 
     def show_undone 
-      @list.display_undone
+      my_list.display_undone
     end
 
-    def save(my_file)
-      my_file = {:file_name , :list}.to_md
-      open ('toDo.md','a') do |file|
+    def save
+      my_file = {item:@item ,list:@list}.to_json
+      open('my_file.json','a') do |file|
         file.puts my_file
       end
     end
@@ -53,7 +52,7 @@ class Todo
       puts "For show all the UnDone type c) "
       puts "For add a new item type d) "
       puts "For delete a item type e) "
-      puts "For exit type d) "
+      puts "For exit type f) "
 
       answer=gets.chomp
 
@@ -64,19 +63,24 @@ class Todo
       elsif answer == "c"
         Todo.show_undone
       elsif answer == "d"
-        Todo.todo_add
+        puts "Enter the new item "
+        new_it=gets.chomp
+        Todo.todo_add(new_it)
       elsif answer == "e"
         ##########     
-      elsif answer == "d"
+      elsif answer == "f"
         puts "Good bye"
-        break
       end
     
     end
 
 end
 
+@todo = Todo.new
+@todo.load
 
+@todo.show_all
+@todo.prompt
 
 
 

@@ -19,11 +19,11 @@ class List
 
   def display
     puts "Display the list : #{name}"
-    @items.each_with_index do |item , index|
+    @items.each do |item|
       if item.done?
-        puts "-[x] #{item.name} (#{index + 1})"
+        puts " -[x] #{item.name} "
       else
-        puts "-[ ] #{item.name} (#{index + 1})"
+        puts " -[ ] #{item.name} "
       end
     end
  end 
