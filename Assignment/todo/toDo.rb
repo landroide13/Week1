@@ -19,12 +19,12 @@ class Todo
 
     def load_data
        @line = File.read("todo.md").split("\n")
-       @new_item = Item.new_from_line(@line)
-       @list.add(@new_item)
+       @item = Item.new_from_line(@line)
+       @list.add(@item)
     end
 
-    def todo_add()
-      
+    def todo_add(new_item)
+      @list.add(Item.new(new_item))
     end
 
     def display
