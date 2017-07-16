@@ -1,23 +1,37 @@
 
 require_relative 'list'
+require_relative 'item'
 
 class Todo
   attr_accessor :line , :list
 
-    def initialize
-      @list = List.new("Today")
-      @line = File.read("todo.md").split("\n")
+    def initialize(file_name = "todo.md")
+      @file_name = file_name
+      #@list = List.new("Today")
+      #@line = File.read("todo.md").split("\n")
       @line.each do |line|
         @list.add(Item.new(line[6..-1],line[3] = "x"))
       end
+    end
+    
+    def list
+      @list = List.new
     end 
+
+    def todo_load
+
+    end
+
+    def todo_add()
+
+    end
 
     def display
       puts "Today :"
       @list.display
     end  
 
-    def show
+    def show_done
       puts "Enter the number of item done.."
       lis_index = gets.chomp
       if lis_index == "exit"
@@ -28,6 +42,13 @@ class Todo
         display
       end
     end
+
+    def show_undone 
+    
+    
+    end
+
+
 end
 
 

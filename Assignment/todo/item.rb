@@ -22,5 +22,7 @@ class Item
   # input: - [x] Love Ruby
   def self.new_from_line(line)
     line[6..-1]
+    done = line[3] == "x"
+    Item.new(name, done)
   end
 end
