@@ -17,9 +17,8 @@ class Todo
     def load
        @line = File.read("todo.md").split("\n")
        @line.each do |line|
-          @my_list.add(Item.new(line[6..-1],line[3]))
+          @my_list.add(Item.new(line[6..-1],line[3] == "x"))
         end
-        puts @my_list
      end
 
     def add(new_item)
@@ -31,11 +30,11 @@ class Todo
     end  
 
     def show_done
-      my_list.display_done
+      @my_list.display_done
     end
 
     def show_undone 
-      my_list.display_undone
+      @my_list.display_undone
     end
 
     def save
@@ -46,6 +45,8 @@ class Todo
     end
 
     def prompt
+
+
       puts "Welcome to the To-Do app... "
       puts "For show all the list type a) "
       puts "For show all the Done items type b) "
@@ -68,7 +69,7 @@ class Todo
         puts "Enter the new item "
         new_it=gets.chomp
         @todo = Todo.new
-        @todo.todo_add(new_it)
+        @todo.add(new_it)
       elsif answer == "e"
         ##########     
       elsif answer == "f"
@@ -78,6 +79,8 @@ class Todo
     end
 
 end
+
+
 
 @todo = Todo.new
 @todo.load
