@@ -39,11 +39,11 @@ class Todo
       @list.display_undone
     end
 
-    def save
-    self_product = {:file_name}.to_md
-    open('toDo.md','a') do |file|
-      file.puts self_product
-    end
+    def save(my_file)
+      my_file = {:file_name , :list}.to_md
+      open ('toDo.md','a') do |file|
+        file.puts my_file
+      end
     end
 
     def prompt
