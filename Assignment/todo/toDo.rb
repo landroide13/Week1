@@ -61,14 +61,17 @@ class Todo
         @todo = Todo.new
         @todo.load
         @todo.show_all
+        @todo.prompt
       elsif answer == "b"
         @todo = Todo.new
         @todo.load
         @todo.show_done
+        @todo.prompt
       elsif answer == "c"
         @todo = Todo.new
         @todo.load
         @todo.show_undone
+        @todo.prompt
       elsif answer == "d"
         puts "Enter the new item "
         new_it=gets.chomp
@@ -80,11 +83,14 @@ class Todo
         answer = gets.chomp
         if answer == "y"
           @todo.save_jo
+          @todo.prompt
           else
           @todo.prompt
+        end
       elsif answer == "e"
         @todo = Todo.new
-        @todo.save_jo     
+        @todo.save_jo 
+        @todo.prompt    
       elsif answer == "f"
         puts "Good bye"
       end
